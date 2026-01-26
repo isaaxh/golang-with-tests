@@ -1,6 +1,7 @@
 package arrays
 
 import (
+	"fmt"
 	"reflect"
 	"slices"
 	"testing"
@@ -51,4 +52,22 @@ func TestSumAllTails(t *testing.T) {
 
 		checkSum(t, got, want)
 	})
+}
+
+func ExampleSum() {
+	got := Sum([]int{1, 2, 3})
+	fmt.Println(got)
+	// Output: 6
+}
+
+func ExampleSumAll() {
+	got := SumAll([]int{1, 2}, []int{0, 9})
+	fmt.Println(got)
+	// Output: []int{2,9}
+}
+
+func ExampleSumAllTails() {
+	got := SumAllTails([]int{1, 2, 3}, []int{0, 9, 1})
+	fmt.Println(got)
+	// Output: []int{5, 10}
 }
